@@ -171,7 +171,7 @@ function generateRef() {
       <br />
       <br />
       <div>
-        <div><strong>Preliminary Users</strong></div>
+        <div><strong>Level One</strong></div>
         <table border="1">
           <theader>
             <td>Name</td>
@@ -182,6 +182,34 @@ function generateRef() {
           <tbody>
           <?php
             $query_result = $conn->query("SELECT * FROM level_one");
+            while($row = $query_result->fetch_assoc()) {
+          ?>
+            <tr>
+              <td><? echo $row['name'] ?></td>
+              <td><? echo $row['email'] ?></td>
+              <td><? echo $row['ref_code'] ?></td>
+              <td><? echo $row['referer'] ?></td>
+            </tr>
+          <?php } ?>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>
+        <div><strong>Level Two</strong></div>
+        <table border="1">
+          <theader>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Referral Code</td>
+            <td>Referer</td>
+          </theader>
+          <tbody>
+          <?php
+            $query_result = $conn->query("SELECT * FROM level_two");
             while($row = $query_result->fetch_assoc()) {
           ?>
             <tr>
